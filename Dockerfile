@@ -1,8 +1,8 @@
-FROM mcr.microsoft.com/dotnet/sdk:5.0.100
+FROM mcr.microsoft.com/dotnet/sdk:5.0.200
 
 # Install Node.js
-ENV NODE_VERSION 12.19.1
-ENV NODE_DOWNLOAD_SHA 858c5201c9572a8ec797f6cb966669cd38d5b5181b93eb5917f9ebdf89471b9f
+ENV NODE_VERSION 14.16.0
+ENV NODE_DOWNLOAD_SHA 7212031d7468718d7c8f5e1766380daaabe09d54611675338e7a88a97c3e31b6
 RUN curl -SL "https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-x64.tar.gz" --output nodejs.tar.gz \
     && echo "$NODE_DOWNLOAD_SHA nodejs.tar.gz" | sha256sum -c - \
     && tar -xzf "nodejs.tar.gz" -C /usr/local --strip-components=1 \
